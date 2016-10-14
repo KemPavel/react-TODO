@@ -29,17 +29,15 @@ gulp.task('scripts', function () {
     .pipe(gulp.dest('dist/scripts/'));
 });
 
-gulp.task('build', ['clean'], function() {
-  gulp.start('html', 'styles', 'scripts');
+gulp.task('build', gulp.series('clean', gulp.parallel('html', 'styles', 'scripts')));
+
+gulp.task('watch', function() {
+  gulp.watch('./app/scripts/**/*', gulp.series('scripts'));
+  gulp.watch('./app/styles/**/*', gulp.series('styles'));
+  gulp.watch('./app/*.html', gulp.series('html'));
 });
 
-gulp.task('watch', ['build'], function() {
-  gulp.watch('./app/scripts/**/*', ['scripts']);
-  gulp.watch('./app/styles/**/*', ['styles']);
-  gulp.watch('./app/*.html', ['html']);
-});
-
-gulp.task('default', ['watch']);
+gulp.task('default',gulp.series('build', 'watch'));
 
 
 
