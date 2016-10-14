@@ -1,1 +1,1 @@
-Simple TODOlist app (React only)
+Simple TODO app (React only)
