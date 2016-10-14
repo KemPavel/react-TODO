@@ -34,7 +34,7 @@ gulp.task('build', ['clean'], function() {
 });
 
 gulp.task('watch', ['build'], function() {
-  gulp.watch('./app/scripts/**/*', ['build']);
+  gulp.watch('./app/scripts/**/*', ['scripts']);
   gulp.watch('./app/styles/**/*', ['styles']);
   gulp.watch('./app/*.html', ['html']);
 });
