@@ -8,11 +8,17 @@ var TodoForm = React.createClass({
   },
 
   handleAddTodoClick() {
-    if (this.refs.input.value.length !== 0) {
+    if (this.refs.input.value.replace(/\s+/g, '').length !== 0) {
       this.props.addTodo(this.refs.input.value);
-      this.refs.input.value = '';
+      this.refs.input.value = '';/**/
     }
     this.refs.input.focus();
+  },
+
+  handleEnterClick(e) {
+    if (e.key === 'Enter') {
+      this.handleAddTodoClick()
+    }
   },
 
   componentDidMount() {
@@ -21,9 +27,9 @@ var TodoForm = React.createClass({
 
   render() {
     return (
-      <div>
-        <input ref="input" maxLength="50" placeholder="Add todo"/>
-        <button onClick={this.handleAddTodoClick}>╋</button>
+      <div className="form">
+        <input className="form__input" ref="input" maxLength="50" placeholder="Add todo" onKeyUp={this.handleEnterClick} />
+        <button className="form__button" onClick={this.handleAddTodoClick}>╋</button>
       </div>
     );
   }

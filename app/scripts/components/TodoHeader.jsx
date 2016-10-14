@@ -9,9 +9,9 @@ var TodoHeader = React.createClass({
 
   render() {
     return (
-      <header>
+      <header className="header">
         <h1>Simple Todo app (React only)</h1>
-        <h3>To-do ({this.props.todosAmount})</h3>
+        <h3>To-Do ({this.props.todosAmount})</h3>
       </header>
     );
   }

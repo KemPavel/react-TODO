@@ -7,7 +7,12 @@ var TodoList = React.createClass({
 
   propTypes: {
     items: React.PropTypes.array,
-    removeTodo: React.PropTypes.func.isRequired
+    removeTodo: React.PropTypes.func.isRequired,
+    toggleTodo: React.PropTypes.func.isRequired
+  },
+
+  handleToggleTodo(id) {
+    this.props.toggleTodo(id);
   },
 
   handleRemoveTodo(id) {
@@ -16,10 +21,10 @@ var TodoList = React.createClass({
 
   render() {
     return (
-      <ul>
+      <ul className="todos-list">
         {this.props.todos.map((todo) => {
           return (
-            <TodoItem todo={todo} key={todo.id} removeTodo={this.handleRemoveTodo} />
+            <TodoItem todo={todo} key={todo.id} removeTodo={this.handleRemoveTodo} toggleTodo={this.handleToggleTodo} />
           );
         })}
       </ul>
