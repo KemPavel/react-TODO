@@ -1,4 +1,4 @@
-Simple TODO app (React only)
+#Simple TODO app (React only)
 
 - Clone repository
 - npm install
