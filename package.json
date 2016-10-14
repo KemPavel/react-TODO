@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Pavel-Kazakov/react-redux.git"
+    "url": "git+https://github.com/Pavel-Kazakov/react-TODO.git"
   },
   "author": "Pavel-Kazakov",
   "license": "ISC",
