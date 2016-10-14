@@ -113,7 +113,7 @@ var TodoApp = React.createClass({
         <TodoHeader todosAmount={activeTodos.length} />
         <TodoForm addTodo={this.handleAddTodo} />
         <TodoList todos={todos} removeTodo={this.handleRemoveTodo} toggleTodo={this.handleToggleTodo} />
-        <TodoFooter showAll={this.handleShowAll} showActive={this.handleShowActive} showCompleted={this.handleShowCompleted} deleteCompleted={this.handleDeleteCompleted} />
+        <TodoFooter activeTab={this.state.visibility} showAll={this.handleShowAll} showActive={this.handleShowActive} showCompleted={this.handleShowCompleted} deleteCompleted={this.handleDeleteCompleted} />
       </div>
     );
   }
