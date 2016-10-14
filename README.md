@@ -1,1 +1,1 @@
-Simple TODOlist app with react-redux
+Simple TODOlist app (React only)
