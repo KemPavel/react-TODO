@@ -1,6 +1,6 @@
 #Simple TODO app (React only)
 
-[DEMO](http://codepen.io/KemPavel/full/dOOJVZ/)
+  [**DEMO**](http://codepen.io/KemPavel/full/dOOJVZ/)
 
 - Clone repository
 - npm install
