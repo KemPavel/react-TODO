@@ -15,12 +15,16 @@ var TodoApp = React.createClass({
 
   getInitialState() {
     return ({
-      todos: [],
+      todos: JSON.parse(localStorage.getItem("todos")) || [],
       visibility: 'all'
     });
   },
 
-  getComplitedTodos() {
+  componentDidUpdate() {
+    localStorage.setItem("todos", JSON.stringify(this.state.todos));
+  },
+
+  getCompletedTodos() {
     return this.state.todos.filter((todo) => {
       return todo.completed;
     });
@@ -101,7 +105,7 @@ var TodoApp = React.createClass({
         todos = activeTodos;
         break;
       case 'completed':
-        todos = this.getComplitedTodos();
+        todos = this.getCompletedTodos();
         break;
       case 'all':
       default:
