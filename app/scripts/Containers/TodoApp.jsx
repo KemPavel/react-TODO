@@ -5,6 +5,8 @@ import TodoForm from './../components/TodoForm.jsx';
 import TodoList from './../components/TodoList.jsx';
 import TodoFooter from './../components/TodoFooter.jsx';
 
+let id = JSON.parse(localStorage.getItem("id")) || 1;
+
 var TodoApp = React.createClass({
 
   propTypes: {
@@ -14,14 +16,13 @@ var TodoApp = React.createClass({
   getInitialState() {
     return ({
       todos: JSON.parse(localStorage.getItem("todos")) || [],
-      id: JSON.parse(localStorage.getItem("id")) || 1,
       visibility: 'all'
     });
   },
 
   componentDidUpdate() {
     localStorage.setItem("todos", JSON.stringify(this.state.todos));
-    localStorage.setItem("id", JSON.stringify(this.state.id));
+    localStorage.setItem("id", JSON.stringify(id));
   },
 
   getCompletedTodos() {
@@ -39,7 +40,7 @@ var TodoApp = React.createClass({
   handleAddTodo(value) {
     let todos = this.state.todos.slice();
     const todo = {
-      id: this.state.id++,
+      id: id++,
       text: value,
       completed: false
     };
